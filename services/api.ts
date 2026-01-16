@@ -1,5 +1,5 @@
 export const TMDB_CONFIG = {
-    BASE_URL: "https://plain-brook-b81e.tamboliabubakar32.workers.dev",
+    BASE_URL: "https://plain-brook-b81e.tamboliabubakar32.workers.dev/3",
     API_KEY: process.env.EXPO_PUBLIC_MOVIE_API_KEY,
     headers:{
         accept: 'application/json',
@@ -18,7 +18,7 @@ export const fetchMovies = async ({query}: {query: string}) => {
     })
 
     if(!response.ok){
-        throw new Error(`Failed to fetch movies: ${ response.statusText}`);
+        throw new Error(`Failed to fetch movies: Status ${response.status}`);
     }
 
     const data = await response.json();
