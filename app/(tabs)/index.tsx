@@ -12,7 +12,8 @@ export default function Index() {
 
   const router = useRouter();
 
-  const {data: movies, 
+  const {
+    data: movies, 
     loading: moviesLoading, 
     error: moviesError} = useFetch(() => 
     fetchMovies({query: ""})
